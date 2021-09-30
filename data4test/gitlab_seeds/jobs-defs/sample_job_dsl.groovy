@@ -1,5 +1,11 @@
 def kws = [
 	//
+	jenlib_name: 'JenkinsLib_jenlib'
+	,
+	jenlib_version: 'yairdar.v0.8.3.pushes',
+	,
+	jenlib_remote: 'https://github.com/ydzvulon/jenlib.git'
+	,
 	repo_path: "${seed_job_repo}"
 	,
 	seed_job_branch: "${seed_job_branch}"
@@ -17,8 +23,37 @@ def kws = [
 ]
 
 
-folder(kws.root_dir){
+// folder(kws.root_dir){
 
+}
+folder(kws.root_dir) {
+  properties {
+    folderLibraries {
+      libraries {
+        libraryConfiguration {
+          name(kws.jenlib_name)
+          defaultVersion(jenlib_version)
+          implicit(false)
+          allowVersionOverride(true)
+          includeInChangesets(true)
+          retriever {
+            scmSourceRetriever {
+              scm {
+                git {
+                  remote(kws.jenlib_remote)
+                //   credentialsId('some-credentials')
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  configure { node ->
+    def traits = node / 'properties' / 'org.jenkinsci.plugins.workflow.libs.FolderLibraries' / 'libraries' / 'org.jenkinsci.plugins.workflow.libs.LibraryConfiguration' / 'retriever' / 'scm' / 'traits'
+    traits << { 'jenkins.plugins.git.traits.BranchDiscoveryTrait'() }
+  }
 }
 
 for (seed_job_pipe in kws.seed_job_pipes)
