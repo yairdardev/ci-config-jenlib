@@ -22,8 +22,8 @@ def kws = [
 
 
 // folder(kws.root_dir){
+// }
 
-}
 folder(kws.root_dir) {
   properties {
     folderLibraries {
