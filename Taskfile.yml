@@ -1,0 +1,16 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  cmd__dev_git_acp: |-
+    git add --all; git commit -a; git push
+
+tasks:
+  default:
+    silent: true
+    cmds: [task -l; pwd]
+
+  dev:git-acp:
+    desc: '{{.cmd__dev_git_acp}}'
+    cmds: ['{{.cmd__dev_git_acp}}']

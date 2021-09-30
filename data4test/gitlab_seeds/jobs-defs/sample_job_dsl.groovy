@@ -30,7 +30,7 @@ folder(kws.root_dir) {
       libraries {
         libraryConfiguration {
           name(kws.jenlib_name)
-          defaultVersion(jenlib_version)
+          defaultVersion(kws.jenlib_version)
           implicit(false)
           allowVersionOverride(true)
           includeInChangesets(true)
