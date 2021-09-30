@@ -10,7 +10,7 @@ node() {
 
 properties([
     parameters([
-        string(name: 'seed_job_repo', defaultValue: 'https://github.com/ydzvulon/ci-config-jenlib.git' )
+        string(name: 'seed_job_repo', defaultValue: 'https://github.com/ydzvulon/ci-config-jenlib.git'),
         string(name: 'seed_job_branch', defaultValue: 'main')
     ])
 ])
