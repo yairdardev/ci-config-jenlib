@@ -10,6 +10,7 @@ def kwj = [
 ]
 
 node {
+    
 
     stage('start'){
         sh 'echo START'
