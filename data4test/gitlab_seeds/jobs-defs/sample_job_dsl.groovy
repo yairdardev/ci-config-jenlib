@@ -1,15 +1,13 @@
+
+// @@act=declare reflection.name=as-yaml python=it.splint("_")[1].split(^^):
+
 def kws = [
 	//
-	jenlib_name: 'JenkinsLib_jenlib'
-	,
+	jenlib_name: 'JenkinsLib_jenlib',
 	jenlib_version: 'yairdar.v0.8.3.pushes',
-	,
-	jenlib_remote: 'https://github.com/ydzvulon/jenlib.git'
-	,
-	repo_path: "${seed_job_repo}"
-	,
-	seed_job_branch: "${seed_job_branch}"
-	,
+	jenlib_remote: 'https://github.com/ydzvulon/jenlib.git',
+	repo_path: "${seed_job_repo}",
+	seed_job_branch: "${seed_job_branch}",
 	root_dir: "samples",
 	seed_job_pipes: [
 		'data4test/gitlab_seeds/batches/a_simple_batch/pipe_500_cmds_minimal.groovy',
