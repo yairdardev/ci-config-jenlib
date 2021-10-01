@@ -97,7 +97,16 @@ def create_pipelineJob(job_ctx, job_props){
         if (fprops.params){
             parameters {
                 for (pr in fprops.params){
-                    stringParam(pr.name, pr.value, pr.desc)
+                    if (pr.kind && pr.kind == 'textParam'){
+                        textParam(pr.name, pr.value, pr.desc)
+                    }else{
+                        stringParam(pr.name, pr.value, pr.desc)
+                    }
+                }
+                if(fprops.params_mul){
+                    for (pr in fprops.params_mul){
+                        textParam(pr.name, pr.value, pr.desc)
+                    }                    
                 }
             }
         }

@@ -1,5 +1,5 @@
 jobs:
-  sample_job:
+  multi_dispatch/run_task_in_path:
     props:
       # active: true
       job_type: pipelineJob
@@ -8,7 +8,6 @@ jobs:
       jenkins_pipeline_path: "_cicd/pipedef/taskfile_pipe.groovy"
       branch: "*/main"
       params:
-
         - name: taskwork_dir
           desc: taskwork_dir
           value: task-samples/a-intro
@@ -20,3 +19,8 @@ jobs:
         - name: entrypoint_task
           desc: entrypoint_task
           value:  show-all
+
+        - name: params_stamp
+          desc: params_stamp
+          value: ''
+          kind: textParam

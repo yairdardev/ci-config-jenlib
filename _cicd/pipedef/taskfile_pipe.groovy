@@ -1,4 +1,7 @@
+@Grab('org.yaml:snakeyaml:1.17')
 @Library('JenkinsLib_Jenlib') _
+import org.yaml.snakeyaml.Yaml
+List projects = new Yaml().load(("conf/projects.yml" as File).text)
 
 def kwj = [
     'scmvars': null,
@@ -6,7 +9,8 @@ def kwj = [
     'params':[
         'taskwork_dir': env.taskwork_dir ?: '.',
         'taskfile_path': env.taskfile_path ?: 'Taskfile.yml',
-        'entrypoint_task': env.entrypoint_task ?: 'ci-flow'
+        'entrypoint_task': env.entrypoint_task ?: 'ci-flow',
+        'params_slug': env.params_slug ?: ''
     ]
 ]
 
