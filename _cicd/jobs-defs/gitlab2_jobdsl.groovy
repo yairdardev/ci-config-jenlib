@@ -7,6 +7,10 @@ private boolean isSandbox() {
   }
 }
 
+def kws = [:]
+
+kws['jenkinsFilePath'] = '_cicd/build.pipe.groovy'
+
 List<Map> gitlab = []
 if (isSandbox()) {
   gitlab = [
@@ -15,12 +19,7 @@ if (isSandbox()) {
 } else {
 
   gitlab = [
-    [name: 'DevOps'],
-    [name: 'DentalDesktop'],
-    [name: 'Shared'],
-    [name: 'Ortho', folder: 'Ortho'],
-    [name: 'OrthoClinic', folder: 'Ortho'],
-    [name: 'InternalTools', displayName: 'Internal Tools'],
+    [name: 'metapath']
   ]
 }
 
@@ -93,7 +92,7 @@ Closure gitlabOrgs(Map args = [:]) {
       }
       projectFactories {
         workflowMultiBranchProjectFactory {
-          scriptPath('Jenkinsfile')
+          scriptPath(kws.jenkinsFilePath)
         }
       }
     }
