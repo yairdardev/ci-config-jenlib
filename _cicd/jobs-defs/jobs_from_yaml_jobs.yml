@@ -1,0 +1,14 @@
+jobs:
+  sample_job:
+    props:
+      # active: true
+      job_type: pipelineJob
+      description: "desc: sadf"
+      git_url: "https://github.com/ydzvulon/ci-config-jenlib.git"
+      jenkins_pipeline_path: "cicd/pipedef/taskfile_pipe.groovy"
+      branch: "*/master"
+      credId: sys_objx_ssh
+      params:
+        - name: taskcmd
+          desc: taskcommand
+          value: task -t  jobtask/Taskfile.yml ci-flow
