@@ -8,7 +8,7 @@ def kws = [
 	jenlib_remote: 'https://github.com/ydzvulon/jenlib.git',
 	repo_path: "${seed_job_repo}",
 	seed_job_branch: "${seed_job_branch}",
-	root_dir: "samples",
+	root_dir: "samples2",
 	seed_job_pipes: [
 		'data4test/gitlab_seeds/batches/a_simple_batch/pipe_500_cmds_minimal.groovy',
 		'data4test/gitlab_seeds/batches/a_simple_batch/pipe_501_cmds_explicit.groovy',
