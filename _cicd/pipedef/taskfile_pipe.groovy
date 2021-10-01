@@ -17,7 +17,7 @@ node {
         kwj.scmvars = checkout scm
     }
 
-    dir(kvj.params.taskwork_dir){
+    dir(kwj.params.taskwork_dir){
         echo "would unflod ${kwj.params.taskcmd}"
         jen.step_stages_from_tasks(
             kwj, 
