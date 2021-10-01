@@ -7,9 +7,9 @@ private boolean isSandbox() {
   }
 }
 
-def kws = [:]
+// def kws = [:]
 
-kws['jenkinsFilePath'] = '_cicd/build.pipe.groovy'
+// kws['jenkinsFilePath'] = '_cicd/build.pipe.groovy'
 
 List<Map> gitlab = []
 if (isSandbox()) {
@@ -92,7 +92,7 @@ Closure gitlabOrgs(Map args = [:]) {
       }
       projectFactories {
         workflowMultiBranchProjectFactory {
-          scriptPath(kws.jenkinsFilePath)
+          scriptPath('_cicd/build.pipe.groovy')
         }
       }
     }
