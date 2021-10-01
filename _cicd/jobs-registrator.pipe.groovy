@@ -3,7 +3,8 @@
 // ===== /SHARED PART ====
 // --- globas vars ---
 // expected vars
-def jobs_def_dir = env.jobs_def_dir ?: '_cicd/jobs-defs'
+// def jobs_def_dir = env.jobs_def_dir ?: '_cicd/jobs-defs'
+def jobs_def_dir = '_cicd/jobs-defs'
 
 // kw.jnode_label
 node() { 
