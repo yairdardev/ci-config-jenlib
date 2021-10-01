@@ -1,12 +1,21 @@
 # https://taskfile.dev
 
 version: '3'
-
 vars:
+  prj__: |-
+    verison_prefix_txt: "0.0.0"
+    project_name_txt:""ci-config-jenlib""
   cmd__dev_git_acp: |-
-    git add --all; git commit -a; git push
-
+    bash -c "git add --all; git commit -a; git push"
+  cmd__dev_tag_version_: |-
+    bash -c "git tag $({{.prj <<EOF 
+    {{.proj__}}
+    EOF
+    )"
+  cmd__dev_tag_version: |-
+    yq r - 
 tasks:
+
   default:
     silent: true
     cmds: [task -l; pwd]
@@ -14,3 +23,6 @@ tasks:
   dev:git-acp:
     desc: '{{.cmd__dev_git_acp}}'
     cmds: ['{{.cmd__dev_git_acp}}']
+  
+  dev:git-tag:
+    desc: tag version
