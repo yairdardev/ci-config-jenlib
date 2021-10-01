@@ -1,7 +1,8 @@
-@Grab('org.yaml:snakeyaml:1.17')
 @Library('JenkinsLib_Jenlib') _
+@Grab('org.yaml:snakeyaml:1.17')
 import org.yaml.snakeyaml.Yaml
-List projects = new Yaml().load(("conf/projects.yml" as File).text)
+
+// List projects = new Yaml().load(("conf/projects.yml" as File).text)
 
 def kwj = [
     'scmvars': null,
@@ -13,6 +14,13 @@ def kwj = [
         'params_slug': env.params_slug ?: ''
     ]
 ]
+
+if (kwj.params.params_slug) {
+    Yaml yaml = new Yaml()
+    def loaded_yaml = yaml.load(kwj.params.params_slug)
+    kwj.params << loaded_yaml
+}
+
 
 node {
 
