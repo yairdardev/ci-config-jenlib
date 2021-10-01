@@ -17,7 +17,7 @@ node {
         kwj.scmvars = checkout scm
     }
 
-    dir('data4test/gitlab_seeds/batches/a_simple_batch'){
+    dir('_cicd/batches/a_simple_batch'){
         jen.step_stages_from_tasks(
             kwj, '.' ,'Taskfile.yml', 'ci-flow'
         )

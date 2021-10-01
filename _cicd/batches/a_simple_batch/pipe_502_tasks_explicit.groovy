@@ -5,7 +5,7 @@ node {
         sh 'echo START'
         kwj.scmvars = checkout scm
     }
-    dir('data4test/gitlab_seeds/batches/a_simple_batch'){
+    dir('_cicd/batches/a_simple_batch'){
         stage('task prepare'){
             sh 'task prepare'
         }
