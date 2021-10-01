@@ -6,7 +6,7 @@ jobs:
       description: "desc: sadf"
       git_url: "https://github.com/ydzvulon/ci-config-jenlib.git"
       jenkins_pipeline_path: "_cicd/pipedef/taskfile_pipe.groovy"
-      branch: "*/master"
+      branch: "*/main"
       credId: sys_objx_ssh
       params:
         - name: taskcmd
