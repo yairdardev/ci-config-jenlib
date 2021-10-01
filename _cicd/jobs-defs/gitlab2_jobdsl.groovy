@@ -50,8 +50,8 @@ Closure gitlabOrgs(Map args = [:]) {
         description(orgDescription)
         gitLabSCMNavigator {
           projectOwner(config.group)
-          credentialsId('gitlab_ssh_key')
-          serverName('git.3shape.local')
+        //   credentialsId('gitlab_ssh_key')
+        //   serverName('git.3shape.local')
           traits {
             subGroupProjectDiscoveryTrait() // discover projects inside subgroups
             gitLabBranchDiscovery {
