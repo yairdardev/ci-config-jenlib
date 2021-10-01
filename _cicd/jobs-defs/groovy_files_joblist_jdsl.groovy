@@ -10,13 +10,13 @@ def kws = [
 	seed_job_branch: "${seed_job_branch}",
 	root_dir: "samples2",
 	seed_job_pipes: [
-		'data4test/gitlab_seeds/batches/a_simple_batch/pipe_500_cmds_minimal.groovy',
-		'data4test/gitlab_seeds/batches/a_simple_batch/pipe_501_cmds_explicit.groovy',
-		'data4test/gitlab_seeds/batches/a_simple_batch/pipe_502_tasks_explicit.groovy',
-		'data4test/gitlab_seeds/batches/a_simple_batch/pipe_503_tasks_from_yml.groovy',
-		'data4test/gitlab_seeds/batches/c_complex_batch/pipe_701_complex_pipes.groovy',
-		'data4test/gitlab_seeds/batches/c_complex_batch/pipe_703_tasks_from_yml.groovy',
-		'data4test/gitlab_seeds/batches/c_complex_batch/pipe_730_groovy_dynamic.groovy',
+		'_cicd/batches/a_simple_batch/pipe_500_cmds_minimal.groovy',
+		'_cicd/batches/a_simple_batch/pipe_501_cmds_explicit.groovy',
+		'_cicd/batches/a_simple_batch/pipe_502_tasks_explicit.groovy',
+		'_cicd/batches/a_simple_batch/pipe_503_tasks_from_yml.groovy',
+		'_cicd/batches/c_complex_batch/pipe_701_complex_pipes.groovy',
+		'_cicd/batches/c_complex_batch/pipe_703_tasks_from_yml.groovy',
+		'_cicd/batches/c_complex_batch/pipe_730_groovy_dynamic.groovy',
 	]
 ]
 
