@@ -4,27 +4,30 @@ def kwj = [
     'scmvars': null,
     'task_parse_result': [:],
     'params':[
-        // 'taskcmd': 'task -t  jobtask/Taskfile.yml ci-flow'
-        'taskcmd': env.taskcmd,
-        'taskupath': env.taskupath
+        'taskwork_dir': env.taskwork_dir ?: '.',
+        'taskfile_path': env.taskfile_path ?: 'Taskfile.yml',
+        'entrypoint_task': env.entrypoint_task ?: 'ci-flow'
     ]
 ]
 
 node {
 
     stage('start'){
-        sh 'echo START'
+        sh 'echo Init Flow'
         kwj.scmvars = checkout scm
     }
 
-    dir('.'){
+    dir(kvj.params.taskwork_dir){
         echo "would unflod ${kwj.params.taskcmd}"
         jen.step_stages_from_tasks(
-            kwj, '.' ,'Taskfile.yml', 'ci-flow'
+            kwj, 
+            '.' ,
+            kwj.params.taskfile_path,
+            kwj.params.entrypoint_task
         )
     }
 
     stage('finis'){
-        sh 'echo FINSH'
+        sh 'echo Over Flow'
     }
 }

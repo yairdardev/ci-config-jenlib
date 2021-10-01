@@ -1,0 +1,28 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  show-all:
+    desc: _
+    cmds:
+      - task show-alef
+      - task show-beit
+  
+  show-alef:
+    desc: _
+    cmds:
+      - echo alef
+  
+  show-beit:
+    desc: _
+    cmds:
+      - echo beit
