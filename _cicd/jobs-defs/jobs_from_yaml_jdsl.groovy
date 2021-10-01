@@ -3,7 +3,7 @@ import org.yaml.snakeyaml.Yaml
 
 // see https://job-dsl.herokuapp.com/
 
-def gitext = readFileFromWorkspace('_cicd/jobdef/jobs_from_yaml_jobs.yml')
+def gitext = readFileFromWorkspace('_cicd/job-defs/jobs_from_yaml_jobs.yml')
 out.println(gitext)
 def jobs_cfg = new Yaml().load(gitext)
 
