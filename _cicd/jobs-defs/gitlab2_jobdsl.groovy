@@ -51,7 +51,7 @@ Closure gitlabOrgs(Map args = [:]) {
         gitLabSCMNavigator {
           projectOwner(config.group)
         //   credentialsId('gitlab_ssh_key')
-          serverName('')
+          serverName('default')
           traits {
             subGroupProjectDiscoveryTrait() // discover projects inside subgroups
             gitLabBranchDiscovery {
