@@ -34,3 +34,13 @@ jobs:
       jenkins_pipeline_path: "_cicd/build.pipe.groovy"
       branch: "*/main.ydzvulon"
       num_to_keep: 5
+  
+  multi_branch/tasker:
+    props:
+      # active: true
+      job_type: multibranchPipelineJob
+      description: "desc: task runner job multibranchPipelineJob"
+      git_url: "https://github.com/ydzvulon/tasker.git"
+      jenkins_pipeline_path: "_cicd/build.pipe.groovy"
+      branch: "*/main"
+      num_to_keep: 5
