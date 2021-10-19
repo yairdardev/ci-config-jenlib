@@ -16,6 +16,8 @@ node {
     
     stage('start'){
         sh 'echo Init Flow'
+        def scmvars = checkout scm
+
         if (kwj.params.params_slug) {
             def loaded_yaml = readYaml file: kwj.params.params_slug
             kwj.params << loaded_yaml

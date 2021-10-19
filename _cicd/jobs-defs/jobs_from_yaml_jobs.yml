@@ -18,7 +18,7 @@ jobs:
 
         - name: entrypoint_task
           desc: entrypoint_task
-          value:  show-all
+          value: show-all
 
         - name: params_stamp
           desc: params_stamp
