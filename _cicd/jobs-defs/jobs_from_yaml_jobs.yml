@@ -24,3 +24,13 @@ jobs:
           desc: params_stamp
           value: ''
           kind: textParam
+
+  multi_branch/jenlib:
+    props:
+      # active: true
+      job_type: multibranchPipelineJob
+      description: "desc: task runner job" multibranchPipelineJob
+      git_url: "https://github.com/ydzvulon/jenlib.git"
+      jenkins_pipeline_path: "_cicd/build.pipe.groovy"
+      branch: "*/main.ydzvulon"
+      num_to_keep: 5
