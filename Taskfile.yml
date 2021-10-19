@@ -48,7 +48,7 @@ tasks:
     desc: _
     cmds:
     - echo --- init step {{.name}} ---
-    - '{{.cmd}}
+    - '{{.cmd}}'
     - echo --- over step {{.name}} ---
   
   step1: &as_step
