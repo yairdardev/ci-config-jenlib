@@ -37,17 +37,19 @@ tasks:
     - task stage-three -o prefixed
     - task stage-four -o prefixed   
     - echo __OVER__
+
   stage-one:
     desc: _
     cmds:
     - echo {{.TASK}}
     - echo step 1
     - echo step 3
+
   step:
     desc: _
     cmds:
     - echo --- init step {{.name}} ---
-    - '{{.cmd}}'
+    - echo {{.cmd}}
     - echo --- over step {{.name}} ---
   
   step1: &as_step
@@ -57,8 +59,8 @@ tasks:
       vars: 
         cmd: echo vvv {{.TASK}}
   
-   step2: *as_step
-   step3: *as_step
+  step2: *as_step
+  step3: *as_step
   
   stage-two:
     desc: _
