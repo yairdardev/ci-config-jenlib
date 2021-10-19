@@ -1,8 +1,4 @@
 @Library('JenkinsLib_Jenlib') _
-@Grab('org.yaml:snakeyaml:1.17')
-import org.yaml.snakeyaml.Yaml
-
-// List projects = new Yaml().load(("conf/projects.yml" as File).text)
 
 def kwj = [
     'scmvars': null,
@@ -15,18 +11,15 @@ def kwj = [
     ]
 ]
 
-if (kwj.params.params_slug) {
-    Yaml yaml = new Yaml()
-    def loaded_yaml = yaml.load(kwj.params.params_slug)
-    kwj.params << loaded_yaml
-}
-
 
 node {
-
+    
     stage('start'){
         sh 'echo Init Flow'
-        kwj.scmvars = checkout scm
+        if (kwj.params.params_slug) {
+            def loaded_yaml = readYaml file: kwj.params.params_slug
+            kwj.params << loaded_yaml
+        }        
     }
 
     dir(kwj.params.taskwork_dir){
