@@ -33,4 +33,4 @@ jobs:
       git_url: "https://github.com/ydzvulon/jenlib.git"
       jenkins_pipeline_path: "_cicd/build.pipe.groovy"
       branch: "*/main.ydzvulon"
-      # num_to_keep: "5"
+      num_to_keep: 5
