@@ -83,8 +83,9 @@ def create_pipelineJob(job_ctx, job_props){
                     }
                 }
                 scriptPath(fprops.jenkins_pipeline_path)
-                sandbox(false)
             }
+            sandbox(false)
+        
         }
         // TODO: use active flag
         disabled(false)
