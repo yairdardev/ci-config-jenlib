@@ -83,6 +83,7 @@ def create_pipelineJob(job_ctx, job_props){
                     }
                 }
                 scriptPath(fprops.jenkins_pipeline_path)
+                sandbox(false)
             }
         }
         // TODO: use active flag
@@ -90,9 +91,9 @@ def create_pipelineJob(job_ctx, job_props){
         quietPeriod(fprops.quietPeriod)
         properties {
             disableConcurrentBuilds()
-            gitLabConnection {
-                gitLabConnection('conn-gitlab')
-            }
+            // gitLabConnection {
+            //     gitLabConnection('conn-gitlab')
+            // }
         }
         if (fprops.params){
             parameters {
