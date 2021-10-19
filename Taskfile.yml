@@ -26,3 +26,55 @@ tasks:
   
   dev:git-tag:
     desc: tag version
+    
+  ci-flow:
+    desc: _
+    cmds:
+      - echo __INIT__
+      - task stage-one -o prefixed
+      - task stage-two -o prefixed
+      - task stage-three -o prefixed
+      - task stage-four -o prefixed   
+      - echo __OVER__
+  
+  stage-one:
+    desc: _
+    cmds:
+    - echo {{.TASK}}
+    - echo step 1
+    - echo step 3
+  
+  step:
+    desc: _
+    cmds:
+    - echo --- init step {{.name}} ---
+    - '{{.cmd}}
+    - echo --- over step {{.name}} ---
+  
+  step1: &as_step
+    desc:
+    cmds:
+    - task: step
+      vars: 
+        cmd: echo vvv {{.TASK}}
+  
+   step2: *as_step
+   step3: *as_step
+  
+  stage-two:
+    desc: _
+    deps:
+    - task: step1
+    - task: step2
+    - task: step3
+      
+  stage-three:
+    desc: _
+    cmds:
+    - task -p -o prefixed stage-one step1 step2 step3 stage-two
+  
+  stage-four:
+    desc: _
+    cmds:
+    - echo finish
+    - task --version
