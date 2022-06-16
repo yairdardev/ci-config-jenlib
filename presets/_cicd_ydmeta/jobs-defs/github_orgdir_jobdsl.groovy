@@ -2,7 +2,7 @@
     description('This contains branch source jobs for example-org GitHub')
     displayName('ydzvulon-org')
     triggers {
-      periodic(2400)
+//       periodic(2400)
     }
     organizations {
       github {
